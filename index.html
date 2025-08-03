@@ -3,12 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Directors</title>
+  <title>The Directors - UI Preview</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"></script>
-  <script src="https://apis.google.com/js/api.js"></script>
 </head>
 <body>
   <header>
@@ -18,8 +14,8 @@
 
   <main id="photo-viewer">
     <div class="photo-container">
-      <img id="main-photo" src="" alt="Photo">
-      <div class="description" id="photo-description"></div>
+      <img id="main-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Lewis_Hamilton_2022_Austria_FP2.jpg/1280px-Lewis_Hamilton_2022_Austria_FP2.jpg" alt="Sample F1">
+      <div class="description" id="photo-description">Sample description for preview</div>
     </div>
 
     <div class="actions">
@@ -28,14 +24,17 @@
 
     <div class="comments">
       <h3>Comments</h3>
-      <div id="comment-list"></div>
+      <div id="comment-list">
+        <p><strong>User1:</strong> Amazing shot!</p>
+        <p><strong>User2:</strong> Love the colors!</p>
+      </div>
       <textarea id="comment-input" placeholder="Write a comment..."></textarea>
       <button id="comment-submit">Post</button>
     </div>
   </main>
 
+  <div class="scroll-hint">↓ Scroll for next</div>
   <div class="doodle-frame"></div>
 
-  <script src="script.js"></script>
 </body>
 </html>
