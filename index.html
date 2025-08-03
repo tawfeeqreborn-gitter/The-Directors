@@ -14,8 +14,8 @@
 
   <main id="photo-viewer">
     <div class="photo-container">
-      <img id="main-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Lewis_Hamilton_2022_Austria_FP2.jpg/1280px-Lewis_Hamilton_2022_Austria_FP2.jpg" alt="Sample F1">
-      <div class="description" id="photo-description">Sample description for preview</div>
+      <img id="main-photo" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Mercedes_W13_Lewis_Hamilton_Austria_2022.jpg" alt="Sample F1">
+      <div class="description" id="photo-description">Lewis Hamilton - Austria GP 2022</div>
     </div>
 
     <div class="actions">
@@ -35,6 +35,34 @@
 
   <div class="scroll-hint">↓ Scroll for next</div>
   <div class="doodle-frame"></div>
+
+  <script>
+    // Simple scroll simulation for preview
+    const photos = [
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Mercedes_W13_Lewis_Hamilton_Austria_2022.jpg",
+        desc: "Lewis Hamilton - Austria GP 2022"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/c/cb/George_Russell_2022_Emilia_Romagna_FP2.jpg",
+        desc: "George Russell - Imola GP 2022"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/5/59/Mercedes_W13_British_GP_2022.jpg",
+        desc: "Mercedes W13 - British GP 2022"
+      }
+    ];
+    let currentIndex = 0;
+    window.addEventListener("wheel", (e) => {
+      if (e.deltaY > 0) {
+        currentIndex = (currentIndex + 1) % photos.length;
+      } else {
+        currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+      }
+      document.getElementById("main-photo").src = photos[currentIndex].src;
+      document.getElementById("photo-description").textContent = photos[currentIndex].desc;
+    });
+  </script>
 
 </body>
 </html>
